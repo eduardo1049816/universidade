@@ -28,6 +28,20 @@ class Aluno:
             
         return db.execute_query(query, values)
     
+    def listar(db: MySQL):
+        query = """
+            SELECT id,
+                    nome,
+                    email,
+                    cpf,
+                    telefone,
+                    endereco,
+                    matricula
+            FROM 
+                    alunos
+        """
+        return db.execute_query(query)
+    
     def editar(self):
         pass
     
