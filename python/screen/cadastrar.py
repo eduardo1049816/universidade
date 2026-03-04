@@ -23,6 +23,55 @@ class Cadastrar:
 
         self.campos = {}
 
+        # ===== ESTILO DA TELA DE CADASTRO =====
+        self.janela.setStyleSheet("""
+            QWidget {
+                background-color: #f4f6f8;
+                font-family: Arial;
+                font-size: 14px;
+            }
+
+            QLabel {
+                color: #2c3e50;
+                font-weight: bold;
+                margin-top: 8px;
+            }
+
+            QLineEdit {
+                background-color: white;
+                border: 1px solid #bdc3c7;
+                border-radius: 6px;
+                padding: 8px;
+            }
+
+            QLineEdit:focus {
+                border: 2px solid #2e86de;
+            }
+
+            QPushButton {
+                background-color: #2e86de;
+                color: white;
+                border-radius: 10px;
+                padding: 12px;
+                margin-top: 15px;
+                font-size: 15px;
+                font-weight: bold;
+            }
+
+            QPushButton:hover {
+                background-color: #1b4f72;
+            }
+
+            QPushButton:pressed {
+                background-color: #154360;
+            }
+        """)
+        # ====================================
+
+        # Ajustes visuais (não alteram estrutura)
+        self.layout.setSpacing(10)
+        self.layout.setContentsMargins(30, 30, 30, 30)
+
         self.configurar_janela()
         self.criar_componentes()
 
@@ -123,8 +172,8 @@ class Cadastrar:
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    
-    tela = Cadastrar()
+
+    tela = Cadastrar(app)
     tela.janela.show()
-   
-    sys.exit(tela.app.exec())
+
+    sys.exit(app.exec())

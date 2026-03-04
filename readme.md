@@ -76,3 +76,27 @@ Este é um projeto desktop, utilizando as tecnologias:
 - **Git Lens**: Interface gráfica pra o versionamento .git integrada ao VSCode.
 
 - **MySql**: SGBS (Sistema Gerenciador de Banco de Dados). Permite conctra o usuario com o servidor MySql, posibilitando criar bases de dados, tabelas, incluir e modificar atributos e registros.
+
+## Build
+- **dependencias**
+~~pip install pyinstaller~~
+```
+pip install -r requirements.txt
+```
+
+**congelar dependencias**
+```
+pip freeze > requeriments.txt
+```
+
+**diretorio raiz do projeto:**Pasta python
+```
+cd python
+```
+```
+pyinstaller --onefile --windowed app.py
+```
+
+**o executavel estara em:** dist/app.exe
+
+
